@@ -1,6 +1,6 @@
 export default {
-  header: "Appointments",
-  view: "Appointments",
+  header: "Taste Profile",
+  view: "Taste Profile",
   appointments: [],
   event: {}
 };

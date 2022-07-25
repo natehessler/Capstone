@@ -1,18 +1,4 @@
-# Full Calendar SPA Example
-
-Demonstrates the following:
-
-- Displaying events retrieved from an API
-- Creating new a event via form
-- Creating new a event via selection of date/time on the calendar
-- Updating an existing event via drag and drop
-- Deleting an event using an click handler
-
-## Create an environment file `.env` with the following keys
-
-```yaml
-OPEN_WEATHER_MAP_API_KEY=
-API_URL=http://localhost:4040
-PORT=4040
-MONGODB=
-```
+<h1>Grill Master Flavor Profile</h1>
+<p>
+The purpose of this website is to give users the ability to find new recipes they may or may not have tried. I love to grill so this was an easy decision for me. I hope to give people inspiration to get outside and grill, and make themselves a delicious meal.
+</p>
