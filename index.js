@@ -34,7 +34,7 @@ function handleEventDragResize(info) {
     };
 
     axios
-      .put(`${process.env.API_URL}/appointments/${event.id}`, requestData)
+      .put(`${process.env.API_URL}/Recipes/${event.id}`, requestData)
       .then(response => {
         console.log(`Event '${response.data.customer}' (${response.data._id}) has been updated.`);
       })
@@ -55,7 +55,7 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
 
-  if (st.view === "Schedule") {
+  if (st.view === "Recipes") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
@@ -68,11 +68,11 @@ function addEventListeners(st) {
       };
 
       axios
-        .post(`${process.env.API_URL}/appointments`, requestData)
+        .post(`${process.env.API_URL}/Recipes`, requestData)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Appointments.appointments.push(response.data);
-          router.navigate("/appointments");
+          store.Recipes.Recipes.push(response.data);
+          router.navigate("/recipes");
         })
         .catch(error => {
           console.log("It puked", error);
@@ -80,7 +80,7 @@ function addEventListeners(st) {
     });
   }
 
-  if (st.view === "Appointments" && st.appointments) {
+  if (st.view === "Recipes" && st.Recipes) {
     const calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
@@ -123,13 +123,13 @@ function addEventListeners(st) {
           };
 
           axios
-          .post(`${process.env.API_URL}/appointments`, requestData)
+          .post(`${process.env.API_URL}/Recipes`, requestData)
           .then(response => {
             // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
             response.data.title = response.data.customer;
-            response.data.url = `/appointments/${response.data._id}`;
+            response.data.url = `/Recipes/${response.data._id}`;
             console.log('matsinet-response.data:', response.data);
-            store.Appointments.appointments.push(response.data);
+            store.Recipes.Recipes.push(response.data);
             console.log(`Event '${response.data.customer}' (${response.data._id}) has been created.`);
             calendar.addEvent(response.data);
             calendar.unselect();
@@ -146,7 +146,7 @@ function addEventListeners(st) {
     calendar.render();
   }
 
-  if (st.view === "Appointments" && st.event) {
+  if (st.view === "Recipes" && st.event) {
     const deleteButton = document.getElementById("delete-appointment");
     deleteButton.addEventListener("click", (event) => {
       deleteButton.disabled = true;
@@ -154,11 +154,11 @@ function addEventListeners(st) {
 
       if (confirm("Are you sure you want to delete this appointment")) {
         axios
-        .delete(`${process.env.API_URL}/appointments/${event.target.dataset.id}`)
+        .delete(`${process.env.API_URL}/Recipes/${event.target.dataset.id}`)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
           console.log(`Event '${response.data.customer}' (${response.data._id}) has been deleted.`);
-          router.navigate('/appointments');
+          router.navigate('/Recipes');
         })
         .catch(error => {
           console.log("It puked", error);
@@ -195,9 +195,9 @@ router.hooks({
           done();
         })
         .catch((err) => console.log(err));
-    } else if (page === "Appointments" && id === "") {
+    } else if (page === "Recipes" && id === "") {
       axios
-        .get(`${process.env.API_URL}/appointments`)
+        .get(`${process.env.API_URL}/recipes`)
         .then((response) => {
           const events = response.data.map(event => {
             return {
@@ -205,28 +205,28 @@ router.hooks({
               title: event.customer,
               start: new Date(event.start),
               end: new Date(event.end),
-              url: `/appointments/${event._id}`,
+              url: `/recipes/${event._id}`,
               allDay: event.allDay || false
             };
           });
-          store.Appointments.event = null;
-          store.Appointments.appointments = events;
+          store.Recipes.event = null;
+          store.Recipes.appointments = events;
           done();
         })
         .catch((error) => {
           console.log("It puked", error);
         });
-    } else if (page === "Appointments" && id !== "") {
+    } else if (page === "Recipes" && id !== "") {
       axios
-      .get(`${process.env.API_URL}/appointments/${id}`)
+      .get(`${process.env.API_URL}/recipes/${id}`)
       .then((response) => {
-        store.Appointments.appointments = null;
-        store.Appointments.event = {
+        store.Recipes.Recipes = null;
+        store.Recipes.event = {
           id: response.data._id,
           title: response.data.customer,
           start: new Date(response.data.start),
           end: new Date(response.data.end),
-          url: `/appointment/${response.data._id}`
+          url: `/recipes/${response.data._id}`
         };
         done();
       })
