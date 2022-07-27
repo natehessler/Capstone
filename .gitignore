@@ -1,7 +1,8 @@
 .DS_Store
-.parcel-cache
 .cache
 dist
 node_modules
 *.sw*
+.idea
 .env
+.parcel-cache
