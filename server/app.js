@@ -3,6 +3,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const recipes = require("./routers/recipes");
 
 // Initialize the Express application
 
@@ -21,10 +22,27 @@ db.once(
   console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 
+// CORS Middleware
+// const cors = (req, res, next) => {
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "X-Requested-With,content-type, Accept,Authorization,Origin"
+//   );
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+//   );
+//   res.setHeader("Access-Control-Allow-Credentials", true);
+//   next();
+// };
+
 const logging = (request, response, next) => {
   console.log(`${request.method} ${request.url} ${Date.now()}`);
   next();
 };
+
+// app.use(cors);
 app.use(express.json());
 app.use(logging);
 
@@ -40,8 +58,10 @@ app.get("/echo/:content", (request, response) => {
   // express adds a "params" Object to requests
   const content = request.params.content;
   // handle GET request for post with an id of "id"
-  response.send(JSON.stringify({ echoed: content }));
+  response.status(418).json({ echoed: content });
 });
+
+app.use("/recipes", recipes);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
