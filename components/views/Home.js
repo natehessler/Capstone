@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default st => html`
   <section id="home">
-    <div class="container">
+    <div class="elements">
       <h2>Welcome to Grill Master Flavor Profile!</h2>
       <h3>What are we about?</h3>
       <p>
