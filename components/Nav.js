@@ -2,8 +2,8 @@ import html from "html-literal";
 
 export default links => html`
   <nav>
-    <i class="fas fa-bars"></i>
-    <ul class="hidden--mobile nav-links">
+    <i class="fas class"></i>
+    <ul class="hello nav-links">
       ${links
         .map(
           link =>
