@@ -1,4 +1,4 @@
 export { default as Home } from "./Home";
 export { default as Recipes } from "./Recipes";
-export { default as GrillingTools } from "./GrillingTools";
-export { default as ContactUs } from "./ContactUs";
+export { default as Grillingtools } from "./Grillingtools";
+export { default as Contactus } from "./Contactus";

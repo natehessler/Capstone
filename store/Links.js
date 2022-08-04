@@ -1,6 +1,6 @@
 export default [
   { title: "Home", text: "Home" },
   { title: "Recipes", text: "Recipes" },
-  { title: "Grilling Tools", text: "Grilling Tools" },
-  { title: "Contact Us", text: "Contact Us" }
+  { title: "Grillingtools", text: "Grilling Tools" },
+  { title: "Contactus", text: "Contact Us" }
 ];

@@ -69,6 +69,7 @@ router
     "/": () => render(),
     ":view": params => {
       let view = capitalize(params.data.view);
+      console.log (view)
       render(store[view]);
     }
   })
