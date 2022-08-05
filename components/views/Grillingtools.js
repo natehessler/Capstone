@@ -5,7 +5,6 @@ export default () => html`
     <div class="elements">
       <h2>Grilling Tools</h2>
       <p>
-
       </p>
     </div>
   </section>
