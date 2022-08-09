@@ -23,50 +23,6 @@ function afterRender() {
     document.querySelector("nav > ul").classList.toggle("hello");
   });
 }
-
-
-// added 8/8
-if (state.view === "Contactus") {
-  document.querySelector("form").addEventListener("submit", event => {
-    event.preventDefault();
-
-    const inputList = event.target.elements;
-    console.log("Input Element List", inputList);
-
-    const meals = [];
-    // Interate over the meals input group elements
-    for (let input of inputList.meals) {
-      // If the value of the checked attribute is true then add the value to the toppings array
-      if (input.checked) {
-        meals.push(input.value);
-      }
-    }
-
-    const requestData = {
-      customer: inputList.name.value,
-      email: inputList.email.value,
-      phone: inputList.phone.value,
-      experience: inputList.experience.value,
-      recommendations: inputList.recommendations.value,
-      meals: meals,
-    };
-    console.log("request Body", requestData);
-
-    axios
-      .post(`${process.env.PIZZA_PLACE_API_URL}`, requestData)
-      .then(response => {
-        // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-        store.Pizza.pizzas.push(response.data);
-        router.navigate("/Pizza");
-      })
-      .catch(error => {
-        console.log("It puked", error);
-      });
-  });
-}
-// end added 8/8
-
-
 router.hooks({
   before: (done, params) => {
     const view =
