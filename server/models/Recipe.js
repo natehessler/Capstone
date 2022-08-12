@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
 const recipeSchema = new mongoose.Schema({
-  customer: {
+  user: {
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
   },
-  crust: {
-    type: String,
-    required: true,
-    enum: ["thin", "chicago", "deep-dish", "hella-thick"]
-  },
-  cheese: {
-    type: String,
-    validate: /^[A-Za-z0-9 ]*$/
-  },
-  sauce: {
+  name: {
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
+  },
+  ingredients: {
+    type: String,
+    // validate: /^[A-Za-z0-9 ]*$/
+  },
+  instructions: {
+    type: String,
+    required: true,
   },
   toppings: [String]
 });

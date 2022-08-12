@@ -48,10 +48,10 @@ router.put("/:id", (request, response) => {
     {
       $set: {
         // Take note that the customer is not included, so it can't
-        crust: body.crust,
-        cheese: body.cheese,
-        sauce: body.sauce,
-        toppings: body.toppings
+        user: body.user,
+        name: body.name,
+        ingredients: body.ingredients,
+        instructions: body.instructions
       }
     },
     {

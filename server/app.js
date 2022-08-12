@@ -42,7 +42,7 @@ const logging = (request, response, next) => {
   next();
 };
 
-// app.use(cors);
+app.use(cors);
 app.use(express.json());
 app.use(logging);
 
