@@ -37,3 +37,21 @@ nav {
   opacity: .72;
 }
 
+.recipe1 {
+  float: left;
+  width: 50%;
+  padding: 30px;
+}
+
+.recipe2 {
+  padding: 30px;
+}
+
+.logo {
+background-image: url("https://c8.alamy.com/comp/HG8TB1/bbq-grill-master-with-cutlery-and-sausage-HG8TB1.jpg");
+}
+
+.logo {
+  height: 200px;
+  border-radius: 25px;
+}

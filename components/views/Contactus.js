@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default () => html`
-  <section id="Contactss">
+  <section id="Contactus">
     <div class="elements">
       <h2>
         Contact Us
