@@ -101,14 +101,6 @@ export default () => html`
         id="meals"
         value="None of these/something else"
       />
-      <div>
-        <label for="recommendations">Recomendations for other recipes (optional):</label>
-        <input
-          type="text"
-          name="recommendations"
-          id="recommendations"
-          placeholder="optional"
-        />
       <input type="submit" name="submit" value="Submit" />
     </form>
   </section>
