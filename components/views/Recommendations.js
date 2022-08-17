@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default () => html`
-  <section id="GrillingTools">
+  <section id="Recommendations">
     <div class="elements">
     <form id="recommendations" method="POST" action="">
       <h1>User Recommendations</h1>
