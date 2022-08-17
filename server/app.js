@@ -11,7 +11,7 @@ const app = express();
 
 dotenv.config();
 
-const PORT = process.env.API_PORT || 4040; // we use || to provide a default value
+const PORT = process.env.PORT || 4040; // we use || to provide a default value
 
 // Connect to database
 mongoose.connect(process.env.MONGODB);
