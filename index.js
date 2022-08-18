@@ -14,14 +14,44 @@ function render(state = store.Home) {
     ${Footer()}
   `;
   router.updatePageLinks();
-  afterRender();
+  afterRender(state);
 }
 
-function afterRender() {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".class").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hello");
   });
+
+  if (state.view === "Recommendations") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        name: inputList.name.value,
+        dish: inputList.dish.value,
+        ingredients: inputList.ingredients.value,
+        instructions: inputList.instructions.value,
+        time: time,
+        vegetarian: vegetarian,
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.RECOMMENDATIONS_URL}`, requestData)
+        .then(response => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          store.Recipe.recipes.push(response.data);
+          router.navigate("/Recommendations");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 router.hooks({
   before: (done, params) => {
@@ -53,6 +83,18 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
+        break;
+      }
+      case "Recommendations": {
+        axios
+          .get(`${process.env.RECOMMENDATIONS_URL}`)
+          .then((response) => {
+            store.Recommendations.recipes = response.data;
+            done();
+          })
+          .catch((error) => {
+            console.log("It puked", error);
+          });
         break;
       }
       default: {

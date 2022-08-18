@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default () => html`
+export default (st) => html`
   <section id="Recommendations">
     <div class="elements">
     <form id="recommendations" method="POST" action="">
@@ -37,6 +37,16 @@ export default () => html`
         />
       </div>
       <div>
+        <label for="instructions">Cooking Instructions:</label>
+        <input
+          type="text"
+          name="instructions"
+          id="instructions"
+          placeholder="Mix ingredients, etc."
+          required
+        />
+      </div>
+      <div>
         <label for="time">Cook Time:</label>
         <select id="time" name="time">
           <option value="">Select a Cook Time</option>
@@ -57,6 +67,22 @@ export default () => html`
 
       <input type="submit" name="submit" value="Submit Recipe!" />
     </form>
+    <table id="recommendations">
+      <tr>
+        <th>Name</th>
+        <th>Dish Name</th>
+        <th>Ingredients</th>
+        <th>Cooking Instructions</th>
+        <th>Cook Time</th>
+        <th>Vegetarian/Vegan</th>
+      </tr>
+      ${st.recipes
+        .map((recommendations) => {
+          return `<tr><td>${recommendations.name}</td><td>${recommendations.dish}</td><td>${
+            recommendations.ingredients
+          }</td><td>${recommendations.instructions}</td><td>${recommendations.time}</tr><td>${recommendations.vegetarian}</td></tr>`;
+        })
+        .join("")}
     </div>
   </section>
 `;

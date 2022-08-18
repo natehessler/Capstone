@@ -22,6 +22,10 @@ db.once(
   console.log.bind(console, "Successfully opened connection to Mongo!")
 );
 
+const logging = (request, response, next) => {
+  console.log(`${request.method} ${request.url} ${Date.now()}`);
+  next();
+};
 // CORS Middleware
 const cors = (req, res, next) => {
   res.setHeader(
@@ -37,10 +41,7 @@ const cors = (req, res, next) => {
   next();
 };
 
-const logging = (request, response, next) => {
-  console.log(`${request.method} ${request.url} ${Date.now()}`);
-  next();
-};
+
 
 app.use(cors);
 app.use(express.json());
@@ -61,7 +62,7 @@ app.get("/echo/:content", (request, response) => {
   response.status(418).json({ echoed: content });
 });
 
-app.use("/recipes", recipes);
+app.use("/recommendations", recipes);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
