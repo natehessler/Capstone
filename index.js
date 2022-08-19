@@ -35,8 +35,8 @@ function afterRender(state) {
         dish: inputList.dish.value,
         ingredients: inputList.ingredients.value,
         instructions: inputList.instructions.value,
-        time: time,
-        vegetarian: vegetarian,
+        time: inputList.time.value,
+        vegetarian: inputList.vegetarian.value,
       };
       console.log("request Body", requestData);
 
@@ -44,7 +44,7 @@ function afterRender(state) {
         .post(`${process.env.RECOMMENDATIONS_URL}`, requestData)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Recipe.recipes.push(response.data);
+          store.Recommendations.recipes.push(response.data);
           router.navigate("/Recommendations");
         })
         .catch(error => {
@@ -101,6 +101,11 @@ router.hooks({
         done();
       }
     }
+  },
+  already: (params) => {
+    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
+
+    render(store[view]);
   }
 });
 

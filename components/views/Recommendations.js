@@ -50,18 +50,18 @@ export default (st) => html`
         <label for="time">Cook Time:</label>
         <select id="time" name="time">
           <option value="">Select a Cook Time</option>
-          <option value="15">15 minutes or less</option>
-          <option value="30">30 minutes or less</option>
-          <option value="60">1 hour or less</option>
-          <option value="longer">Longer than 1 hour</option>
+          <option value="15 minutes or less">15 minutes or less</option>
+          <option value="30 minutes or less">30 minutes or less</option>
+          <option value="1 hour or less">1 hour or less</option>
+          <option value="Longer than 1 hour">Longer than 1 hour</option>
         </select>
       </div>
       <div>
         <label for="vegetarian">Vegetarian/Vegan?:</label>
         <select id="vegetarian" name="vegetarian">
           <option value="">Select</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
       </div>
 
@@ -80,7 +80,7 @@ export default (st) => html`
         .map((recommendations) => {
           return `<tr><td>${recommendations.name}</td><td>${recommendations.dish}</td><td>${
             recommendations.ingredients
-          }</td><td>${recommendations.instructions}</td><td>${recommendations.time}</tr><td>${recommendations.vegetarian}</td></tr>`;
+          }</td><td>${recommendations.instructions}</td><td>${recommendations.time}<td>${recommendations.vegetarian}</td></tr>`;
         })
         .join("")}
     </div>
