@@ -5,27 +5,25 @@ export default (st) => html`
     <div class="elements">
     <h1>Recipes</h1>
       <section class="recipe1">
-      <h2>Steak and Potatoes</h2>
+      <h2>Steak</h2>
       <h4>Ingredients</h4>
       <ul>
 <li>1 1/2 lb flank steak, sliced against the grain (or ribeye steak, tenderloin, strip loin, strip steak…)</li>
-<li>1 1/2 lb small yellow potatoes, quartered</li>
 <li>1 tablespoon olive oil</li>
 <li>3 tablespoons butter, divided</li>
 <li>5 garlic cloves, minced</li>
 <li>1 teaspoon fresh thyme, chopped</li>
-<li>1 teaspoon chopped fresh rosemary</li>
 <li>1 teaspoon fresh oregano, chopped</li>
 <li>Salt and fresh cracked pepper</li>
 <li>Crushed red chili pepper flakes, optional</li>
       </ul>
       <h4>Directions</h4>
       <ol>
-        <li>To prepare the garlic butter steak recipe with potatoes wedges: In a large bowl, combine the steak strips with soy sauce, olive oil, pepper, and hot sauce. Set aside and allow steak strips to marinate while you cook potatoes.</li>
-        <li>In a large skillet over medium-high heat, mix 1 tablespoon olive oil and 1 tablespoon butter. When butter is melted, add potatoes wedges. Cook for about 4 minutes, stir and cook an additional 4-5 minutes until potatoes wedges are golden and fork-tender. Transfer sauteed potatoes to a plate and set aside.</li>
-        <li>Keep the same skillet over medium heat and add the remaining 2 tablespoons of butter, garlic, red chili pepper flakes, and fresh herbs. Lay the steak strips in one layer in the skillet, keeping the drained steak marinade for later. Cook the steak strips on each side for 1 minute each, until nicely browned – adjust timing depending on how you like your steak.</li>
-        <li>Right before the Garlic Butter steak is done, you can stir in the reserved marinade if you like, and cook for one minute. Add the potatoes wedges back to the garlic butter steak pan and heat through. Adjust seasoning with salt and pepper if necessary.</li>
-        <li>Remove from heat and serve immediately your steak and potatoes, garnished with more crushed chili pepper, fresh herbs, and a sprinkle of parmesan cheese over the potatoes if you like. Enjoy!</li>
+        <li>To prepare the garlic butter steak recipe: In a large bowl, combine the steak strips with soy sauce, olive oil, pepper, and hot sauce. Set aside and allow steak strips to marinate.</li>
+        <li>In a large skillet over medium-high heat, mix 1 tablespoon olive oil and 3 tablespoons butter.
+        <li>When butter is melted, add garlic, red chili pepper flakes, and fresh herbs. Lay the steak strips in one layer in the skillet, keeping the drained steak marinade for later. Cook the steak strips on each side for 1 minute each, until nicely browned – adjust timing depending on how you like your steak. (You can use the thumb test for internal temp of steak.)</li>
+        <li>Right before the Garlic Butter steak is done, you can stir in the reserved marinade if you like, and cook for one minute. Adjust seasoning with salt and pepper if necessary.</li>
+        <li>Remove from heat and let steak rest for about 5 minutes. Garnish with more crushed chili pepper and fresh herbs if you like. Enjoy!</li>
       </ol>
 
       <h2>Chicken</h2>
@@ -70,24 +68,26 @@ export default (st) => html`
       <h2>Vegetarian</h2>
       <h4>Ingredients</h4>
       <ul>
-<li>1 1/2 lb flank steak, sliced against the grain (or ribeye steak, tenderloin, strip loin, strip steak…)</li>
-<li>1 1/2 lb small yellow potatoes, quartered</li>
-<li>1 tablespoon olive oil</li>
-<li>3 tablespoons butter, divided</li>
-<li>5 garlic cloves, minced</li>
-<li>1 teaspoon fresh thyme, chopped</li>
-<li>1 teaspoon chopped fresh rosemary</li>
-<li>1 teaspoon fresh oregano, chopped</li>
-<li>Salt and fresh cracked pepper</li>
-<li>Crushed red chili pepper flakes, optional</li>
+<li>1 Medium Zucchini</li>
+<li>3 Medium Carrots</li>
+<li>12 ounces Baby Potatoes (350 grams)</li>
+<li>1 Large Red Onion</li>
+<li>2-4 Garlic Heads</li>
+<li>4 tablespoons Extra Virgin Olive Oil</li>
+<li>1 teaspoon Dried Garlic</li>
+<li>¼ teaspoon Black Pepper</li>
+<li>1 teaspoon Sweet Paprika</li>
+<li>2 tablespoons Marjoram</li>
+<li>¾ teaspoon Salt</li>
       </ul>
       <h4>Directions</h4>
       <ol>
-        <li>To prepare the garlic butter steak recipe with potatoes wedges: In a large bowl, combine the steak strips with soy sauce, olive oil, pepper, and hot sauce. Set aside and allow steak strips to marinate while you cook potatoes.</li>
-        <li>In a large skillet over medium-high heat, mix 1 tablespoon olive oil and 1 tablespoon butter. When butter is melted, add potatoes wedges. Cook for about 4 minutes, stir and cook an additional 4-5 minutes until potatoes wedges are golden and fork-tender. Transfer sauteed potatoes to a plate and set aside.</li>
-        <li>Keep the same skillet over medium heat and add the remaining 2 tablespoons of butter, garlic, red chili pepper flakes, and fresh herbs. Lay the steak strips in one layer in the skillet, keeping the drained steak marinade for later. Cook the steak strips on each side for 1 minute each, until nicely browned – adjust timing depending on how you like your steak.</li>
-        <li>Right before the Garlic Butter steak is done, you can stir in the reserved marinade if you like, and cook for one minute. Add the potatoes wedges back to the garlic butter steak pan and heat through. Adjust seasoning with salt and pepper if necessary.</li>
-        <li>Remove from heat and serve immediately your steak and potatoes, garnished with more crushed chili pepper, fresh herbs, and a sprinkle of parmesan cheese over the potatoes if you like. Enjoy!</li>
+        <li>Preheat grill to 400°F.</li>
+        <li>Cut the zucchini into chunks. Peel and slice the carrots. Cut the baby potatoes into quarters. As for the onion – cut it either into rings or quarters. Trim the top of each garlic head (about ¼ to ⅓ – where the stem is) so that the cloves are exposed. The outer skin should easily come off at this stage. There is no need to remove everything, just the ones that go easily.</li>
+        <li>Now place all the veggies in a large bowl, except for the garlic heads. Drizzle the oil over.</li>
+        <li>Prepare the spice mix by combining all the ingredients in a small bowl. Now sprinkle the seasoning over the veggies and give them a good toss until they are all coated evenly.</li>
+        <li>Divide the veggies into 4 sheets of foil. Now take the garlic head and place it the open side down into the large bowl where the veggies were. Press down so the cloves suck the juices (oil + seasoning). Repeat with the rest of them. Place them in the middle of each packet.</li>
+        <li>Wrap each packet tight and place them onto a baking tray. Bake them for 30-35 minutes or until the veggies are done.</li>
       </ol>
 </section>
 
