@@ -3,22 +3,22 @@ const recommendationsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9, ]*$/
   },
   dish: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9, ]*$/
   },
   ingredients: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9, ]*$/
   },
   instructions: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9, ]*$/
   },
   time: {
     type: String,
