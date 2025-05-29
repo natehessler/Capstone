@@ -1,29 +1,74 @@
-# Savvy Coders Project Boilerplate Starter Kit
+# Grill Master 🔥🍖
 
-## Overview
+## About
+Grill Master is a web application for grilling enthusiasts to find, save, and share their favorite grilling recipes. The app includes recipes, recommendations, and a way to contact the site administrators.
 
-This template repository contains several opinionated, 'starter' files and settings to help Savvy Coder students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
+## Features
+- Browse grilling recipes and cooking techniques
+- View recommendations for grilling equipment
+- Contact form for questions and feedback
+- Responsive design for mobile and desktop
 
-In addition to a '.gitignore' and some VS Code specific extensions and settings, it includes the 'recommended' settings for:
+## Tech Stack
+- Frontend: Vanilla JavaScript with HTML-literal templating
+- CSS: Custom styling with responsive design
+- Backend: Node.js with Express
+- Database: MongoDB with Mongoose
+- Routing: Navigo for SPA routing
+- Bundling: Parcel
 
-1. [ESLint](eslint.org)
-2. [Stylelint](stylelint.io)
-3. [Prettier](prettier.io)
+## Getting Started
 
-## Get Started
+### Prerequisites
+- Node.js (v12 or higher)
+- npm or yarn
+- MongoDB (local or Atlas connection)
 
-**First and foremost,** make sure that your local machine is set up with all of the 'dev environment tooling' as per the instructions in the curriculum.
+### Installation
+1. Clone the repository
+   ```
+   git clone <repository-url>
+   cd <project-directory>
+   ```
 
-Well, after establishing your directory structure on your local machine, (e.g. '~/Code/SavvyCoders'), clone the Savvy Starter Repo - essentially, there should be a button that says **Use this template.**
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-> [Read more about using templates on GitHub here...](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+3. Environment Setup
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   PORT=4040
+   ```
 
-Once this repo has been created on your GitHub, you can click on the button to 'clone' it as usual.
+4. Start the development server
+   ```
+   npm run serve
+   ```
+   
+   In a separate terminal, start the backend:
+   ```
+   npm run app:watch
+   ```
 
-Once it's `clone`d to your local machine, `cd` into the directory and **be sure to do:** `npm i` to get all of the dependencies installed. If you see any _errors_ (warnings are OK) on Windows, you may have to do `npm install`.
+5. Open your browser and navigate to `http://localhost:1234`
 
-Now, enter `code .` to open this project in VS Code, and look for a prompt to 'install some extensions' once inside VS Code (in the bottom `right` of your screen). You should install these.
+## Available Scripts
+- `npm start` - Start the Express server
+- `npm run serve` - Start the Parcel development server
+- `npm run app:watch` - Start the Express server with Nodemon for auto-reloading
+- `npm run parcel-build` - Build the frontend for production
 
-In your repo, feel free to update this README and make any other initial changes to files, etc. Then go ahead and do your usual `git` steps -- add, commit, and push.
+## Deployment
+This application is configured for deployment to Heroku with the included Procfile.
 
-**Note:** This is a template repository, no need to 'fork it.
+## Project Structure
+- `/components` - Frontend components
+- `/server` - Express backend
+- `/store` - Data store for the frontend
+- `/assets` - Static assets
+
+## License
+ISC
