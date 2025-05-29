@@ -10,7 +10,7 @@ Grill Master is a web application for grilling enthusiasts to find, save, and sh
 - Responsive design for mobile and desktop
 
 ## Tech Stack
-- Frontend: Vanilla JavaScript with HTML-literal templating
+- Frontend: JavaScript with HTML-literal templating
 - CSS: Custom styling with responsive design
 - Backend: Node.js with Express
 - Database: MongoDB with Mongoose
@@ -47,13 +47,15 @@ Grill Master is a web application for grilling enthusiasts to find, save, and sh
    ```
    npm run serve
    ```
-   
+
    In a separate terminal, start the backend:
    ```
    npm run app:watch
    ```
 
-5. Open your browser and navigate to `http://localhost:1234`
+5. Open your browser and navigate to:
+   - Frontend: `http://localhost:1234` (Parcel dev server)
+   - Backend API: `http://localhost:4040` (Express server)
 
 ## Available Scripts
 - `npm start` - Start the Express server
