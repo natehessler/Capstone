@@ -4,7 +4,8 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 
-const router = new Navigo("/");
+// Initialize router with the correct root and hash strategy
+const router = new Navigo("/", {hash: true});
 
 function render(state = store.Home) {
   document.querySelector("#root").innerHTML = `
@@ -19,9 +20,12 @@ function render(state = store.Home) {
 
 function afterRender(state) {
   // add menu toggle to bars icon in nav bar
-  document.querySelector(".class").addEventListener("click", () => {
-    document.querySelector("nav > ul").classList.toggle("hello");
-  });
+  const hamburgerMenu = document.querySelector(".fas.fa-bars");
+  if (hamburgerMenu) {
+    hamburgerMenu.addEventListener("click", () => {
+      document.querySelector("nav > ul").classList.toggle("hidden");
+    });
+  }
 
   if (state.view === "Recommendations") {
     document.querySelector("form").addEventListener("submit", event => {
@@ -41,11 +45,11 @@ function afterRender(state) {
       console.log("request Body", requestData);
 
       axios
-        .post(`${process.env.RECOMMENDATIONS_URL}`, requestData)
+        .post(process.env.RECOMMENDATIONS_URL || "http://localhost:4040/recommendations", requestData)
         .then(response => {
-          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          // Push the new recipe onto the Recommendations state recipes attribute
           store.Recommendations.recipes.push(response.data);
-          router.navigate("/Recommendations");
+          router.navigate("/#/Recommendations");
         })
         .catch(error => {
           console.log("It puked", error);
@@ -53,6 +57,9 @@ function afterRender(state) {
     });
   }
 }
+// Debug
+console.log("Starting application");
+
 router.hooks({
   before: (done, params) => {
     const view =
@@ -87,7 +94,7 @@ router.hooks({
       }
       case "Recommendations": {
         axios
-          .get(`${process.env.RECOMMENDATIONS_URL}`)
+          .get(process.env.RECOMMENDATIONS_URL || "http://localhost:4040/recommendations")
           .then((response) => {
             store.Recommendations.recipes = response.data;
             done();
@@ -111,11 +118,20 @@ router.hooks({
 
 router
   .on({
-    "/": () => render(),
+    "/": () => render(store.Home),
     ":view": params => {
       let view = capitalize(params.data.view);
-      console.log (view)
-      render(store[view]);
+      console.log("Route changed to:", view);
+      if (store[view]) {
+        render(store[view]);
+      } else {
+        console.error("View not found in store:", view);
+        router.navigate("/");
+      }
     }
+  })
+  .notFound(() => {
+    console.log("Route not found, navigating to home");
+    router.navigate("/");
   })
   .resolve();

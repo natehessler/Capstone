@@ -3,10 +3,9 @@ import html from "html-literal";
 export default () => html`
   <section id="Contactus">
     <div class="elements">
-      <h2>
-        Contact Us
-      </h2>
-      <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions about grilling or want to connect with our community? Fill out the form below and we'll be in touch!</p>
+      <div class="contact-container">
     <form id="contact"
           accept-charset="utf-8"
           method="POST"
@@ -54,46 +53,28 @@ export default () => html`
       </div>
       <div>
         <label for="meals">Meal(s) of interest:</label>
-        <input
-          type="checkbox"
-          id="id_of_checkbox1"
-          class="items1"
-          name="meals"
-          value="Chicken"
-        />
-        <label for="meal1">Steak</label>
-        <input
-          type="checkbox"
-          id="id_of_checkbox2"
-          class="items1"
-          name="meals"
-          value="steak"
-        />
-        <label for="top2">Burger</label>
-        <input
-          type="checkbox"
-          id="id_of_checkbox3"
-          class="items1"
-          name="meals"
-          value="burger"
-        />
-        <label for="top3">Chicken</label>
-        <input
-          type="checkbox"
-          id="id_of_checkbox4"
-          class="items1"
-          name="meals"
-          value="Chicken"
-        />
-        <label for="top4">Vegetarian</label>
-        <input
-          type="checkbox"
-          id="id_of_checkbox5"
-          class="items1"
-          name="meals"
-          value="Vegetarian"
-        />
-        <label for="top5">None of these/something else</label>
+        <div class="checkbox-group">
+        <div class="checkbox-item">
+          <input type="checkbox" id="meal1" name="meals" value="Steak" />
+          <label for="meal1">Steak</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="meal2" name="meals" value="Burger" />
+            <label for="meal2">Burger</label>
+          </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="meal3" name="meals" value="Chicken" />
+          <label for="meal3">Chicken</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="meal4" name="meals" value="Vegetarian" />
+            <label for="meal4">Vegetarian</label>
+          </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="meal5" name="meals" value="Other" />
+          <label for="meal5">Other</label>
+        </div>
+      </div>
       </div>
       <input
         type="hidden"
@@ -103,7 +84,7 @@ export default () => html`
       />
       <input type="submit" name="submit" value="Submit" />
     </form>
-  </section>
+  </div>
     </div>
   </section>
 `;

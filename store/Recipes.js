@@ -1,4 +1,4 @@
 export default {
   view: "Recipes",
-  header: "Recipes",
+  header: "Grilling Recipes"
 };
