@@ -4,6 +4,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const recipes = require("./routers/recipes");
+const contacts = require("./routers/contacts");
 
 // Initialize the Express application
 
@@ -84,6 +85,7 @@ app.get("/echo/:content", (request, response) => {
 });
 
 app.use("/recommendations", recipes);
+app.use("/contacts", contacts);
 
 // For any route not handled by the server, send back the index.html file
 app.get("*", (req, res) => {

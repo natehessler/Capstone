@@ -9,7 +9,7 @@ export default () => html`
     <form id="contact"
           accept-charset="utf-8"
           method="POST"
-          action="https://formspree.io/f/mzbwbdrb">
+          action="/contacts">
 
       <div>
         <label for="name">Full Name:</label>

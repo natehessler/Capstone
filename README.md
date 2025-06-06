@@ -39,28 +39,25 @@ Grill Master is a web application for grilling enthusiasts to find, save, and sh
 3. Environment Setup
    Create a `.env` file in the root directory with the following variables:
    ```
-   MONGODB_URI=your_mongodb_connection_string
+   MONGODB=your_mongodb_connection_string
    PORT=4040
    ```
+   
+   Note: The application will store contact form submissions and recipe recommendations in MongoDB when a valid connection string is provided.
 
 4. Start the development server
    ```
-   npm run serve
+   npm run dev
    ```
-
-   In a separate terminal, start the backend:
-   ```
-   npm run app:watch
-   ```
+   
+   This will build the frontend and start the server.
 
 5. Open your browser and navigate to:
-   - Frontend: `http://localhost:1234` (Parcel dev server)
-   - Backend API: `http://localhost:4040` (Express server)
+   - `http://localhost:4040`
 
 ## Available Scripts
-- `npm start` - Start the Express server
-- `npm run serve` - Start the Parcel development server
-- `npm run app:watch` - Start the Express server with Nodemon for auto-reloading
+- `npm run dev` - Build frontend and start server with auto-reload
+- `npm start` - Start the Express server (requires built frontend)
 - `npm run parcel-build` - Build the frontend for production
 
 ## Deployment
